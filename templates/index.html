@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+ 
+</head>
+<body>
+        {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+            {% if messages %}                            <!-- check if there are any messages -->
+                {% for message in messages %}            <!-- loop through the messages -->
+                    <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+                {% endfor %}
+            {% endif %}
+            {% endwith %}
+
+    <h1>Where are you from?</h1>
+    <h3>Please enter info</h3>
+        <form action='/users' method='post'>
+        Name: <input type='text' name='name'>
+        Email: <input type='text' name='email'>
+        
+        <input type='submit' value='create user'>
+    
+    <select name="location" class="form-control form-control-lg" style="width:200px; margin:20px;">
+        <option>San Jose</option>
+        <option>LA</option>
+        <option>NY</option>
+        <option>AZ</option>
+        <option>TX</option>
+
+      </select>
+      <select  name="language" class="form-control" style="width:200px;margin:20px;">
+        <option>Python</option>
+        <option>Ruby</option>
+        <option>Lakesr</option>
+        <option>Seltics</option>
+        <option>Dodgers</option>
+
+      </select>
+      
+    </form>
+
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">Say somethinnnnnnnnnnnnnnnnnn</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" style="width:400px;margin:20px;"></textarea>
+    </div> 
+   
+</body>
+</html>
